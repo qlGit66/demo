@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "超星自动答题助手",
+  "name": "学习通自动答题扩展",
   "version": "1.0",
-  "description": "超星自动答题浏览器扩展",
+  "description": "自动完成学习通测验和作业的浏览器扩展",
   "permissions": [
     "storage",
     "tabs",

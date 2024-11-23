@@ -46,7 +46,7 @@ class MainWindow(QMainWindow):
         self.init_ui()
         
     def init_ui(self):
-        self.setWindowTitle('超星自动答题')
+        self.setWindowTitle("学习通自动答题扩展")
         self.setFixedSize(400, 500)
         
         # 主窗口部件
