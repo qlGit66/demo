@@ -1,0 +1,48 @@
+# 基础配置
+openai_api_key: "your-openai-key"
+chaoxing_token: "your-chaoxing-token"
+
+# 通知配置
+notification:
+  threshold: 50
+  desktop: true
+  email: true
+  telegram: false
+
+# 邮件配置
+email:
+  enabled: true
+  smtp_server: "smtp.gmail.com"
+  port: 587
+  username: "your-email@gmail.com"
+  password: "your-app-password"
+  sender: "your-email@gmail.com"
+  receivers: 
+    - "your-email@gmail.com"
+
+# 答题配置
+answer:
+  retry_times: 3
+  delay_range: [1, 3]
+  timeout: 30
+  auto_submit: true
+  save_progress: true
+  check_interval: 60
+
+# 代理配置
+proxy:
+  enabled: false
+  http: "http://127.0.0.1:7890"
+  https: "http://127.0.0.1:7890"
+
+# 日志配置
+logging:
+  level: "INFO"
+  dir: "logs"
+  max_size: 10 # MB
+  backup_count: 5
+
+# 安全配置
+security:
+  encrypt_credentials: true
+  encryption_key: "your-encryption-key" 

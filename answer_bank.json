@@ -1,0 +1,18 @@
+{
+    "questions": {
+        "题目内容1": {
+            "answer": "答案内容",
+            "type": "题目类型",
+            "source": "ai",
+            "timestamp": "2024-03-14 12:34:56",
+            "correct": true
+        },
+        "题目内容2": {
+            "answer": "答案内容",
+            "type": "题目类型",
+            "source": "ai",
+            "timestamp": "2024-03-14 12:35:00",
+            "correct": true
+        }
+    }
+} 

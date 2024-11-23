@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "超星自动答题助手",
+  "version": "1.0",
+  "description": "超星自动答题浏览器扩展",
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+    "scripting",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "*://*.chaoxing.com/*",
+    "*://*.edu.cn/*",
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icon48.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.chaoxing.com/*",
+        "*://mooc1.chaoxing.com/*",
+        "*://mooc1-1.chaoxing.com/*",
+        "*://mooc1-2.chaoxing.com/*",
+        "*://*.edu.cn/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true,
+      "world": "MAIN"
+    }
+  ],
+  "web_accessible_resources": [{
+    "resources": ["content.js"],
+    "matches": ["<all_urls>"]
+  }],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  }
+} 

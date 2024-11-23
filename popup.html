@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>超星自动答题</title>
+  <style>
+    body {
+      width: 350px;
+      height: 450px;
+      padding: 15px;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+    .tabs {
+      display: flex;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .tab {
+      flex: 1;
+      padding: 12px;
+      text-align: center;
+      cursor: pointer;
+      background: white;
+      border: none;
+      outline: none;
+      font-size: 15px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    .tab.active {
+      background: #4CAF50;
+      color: white;
+    }
+    #answerSection, #configSection {
+      display: none;
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    #answerSection.active, #configSection.active {
+      display: block;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #333;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+    .form-group input:focus {
+      border-color: #4CAF50;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(76,175,80,0.2);
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    button:disabled {
+      background: #cccccc;
+      cursor: not-allowed;
+    }
+    #stopBtn {
+      background: #f44336;
+    }
+    #stopBtn:hover {
+      background: #da190b;
+    }
+    #log {
+      margin-top: 15px;
+      height: 180px;
+      overflow-y: auto;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 4px;
+      background: #fff;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    #log p {
+      margin: 5px 0;
+      padding: 5px;
+      border-bottom: 1px solid #eee;
+    }
+    .status-text {
+      text-align: center;
+      color: #666;
+      margin: 10px 0;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="tabs">
+    <button class="tab active" data-section="answerSection">答题</button>
+    <button class="tab" data-section="configSection">配置</button>
+  </div>
+
+  <div id="answerSection" class="active">
+    <button id="startBtn">开始答题</button>
+    <button id="stopBtn" style="display: none;">停止答题</button>
+    <div class="status-text">日志信息</div>
+    <div id="log"></div>
+  </div>
+
+  <div id="configSection">
+    <div class="form-group">
+      <label>题库Token:</label>
+      <input type="text" id="token" placeholder="不填则使用AI答题">
+    </div>
+    <div class="form-group">
+      <label>星火 APPID:</label>
+      <input type="text" id="appId">
+    </div>
+    <div class="form-group">
+      <label>星火 APIKey:</label>
+      <input type="text" id="apiKey">
+    </div>
+    <div class="form-group">
+      <label>星火 APISecret:</label>
+      <input type="text" id="apiSecret">
+    </div>
+    <button id="saveBtn">保存配置</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html> 
